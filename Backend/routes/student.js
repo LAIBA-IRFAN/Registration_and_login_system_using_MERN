@@ -10,7 +10,6 @@ const auth = require('../middleware/auth')
 app.use(express.json())
 app.use(cookieParser())
 
-
 router.post("/students" , async(req,res)=>{
     const password = req.body.password;
     const confirmPassword = req.body.confirmPassword;
@@ -62,6 +61,7 @@ router.post("/login" , async(req,res)=>{
         res.send(err)
     }
 })
+
 
 router.get("/newpage", auth , async(req,res)=>{
     try{

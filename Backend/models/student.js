@@ -45,7 +45,7 @@ studentSchema.methods.generateToken = async function(){
         this.tokens = this.tokens.concat({token:token})
         await this.save();
         return token;
-    }
+    }       
     catch(err){     
         console.log(err)
     }

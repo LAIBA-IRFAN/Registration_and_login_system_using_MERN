@@ -60,6 +60,8 @@ const Login=()=>{
         <h1>Login</h1>
         <TextField onChange={change} label="emailAddress" value={details.emailAddress} name="emailAddress" id="outlined-basic" variant="outlined" />
         <TextField onChange={change} label="password" value={details.password} name="password" type='password' id="outlined-basic" variant="outlined" />
+        <br></br>
+        <a href='/register'>Register now</a>
         <Button variant="contained" type='submit'>SUBMIT</Button>
 
         </form>
