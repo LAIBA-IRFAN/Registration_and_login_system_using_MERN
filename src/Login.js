@@ -44,6 +44,7 @@ const Login=()=>{
                     password:'',
                 }
             })
+            navigate('/newpage')
                     // navigate('/newpage')
 
         }

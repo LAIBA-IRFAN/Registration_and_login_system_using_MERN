@@ -1,10 +1,16 @@
 import React,{useEffect, useState} from "react";
 import Cookies from 'universal-cookie';
 import axios from "axios";
+import Button from '@mui/material/Button';
 
-const NewPage = () =>{      
-    // const cookies = new Cookies();
-    // const token = cookies.get("mycookie")
+const NewPage = ({setIsLoggedIn}) =>{      
+    const cookies = new Cookies();
+    
+    const Logout=()=>{
+        cookies.remove("mycookie");
+        setIsLoggedIn(false)
+        console.log('HELLO')
+    }
     // const [info , setInfo] = useState(false)
 
     // useEffect(() => {
@@ -29,13 +35,14 @@ const NewPage = () =>{
     //     fetchData();
     //   });
     return(
-        // <>
-        // {
-        // info ?
+        <>
         <h1>Hello, This is First Page</h1> 
-        // : null
-        // }
-        // </>
+        <br></br>
+        <Button variant="contained" type='submit'
+        onClick={Logout}>LOGOUT</Button>
+        
+        </>
+
     )
 }
 

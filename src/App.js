@@ -27,16 +27,13 @@ function App() {
         })
         const decodedtoken = await response.data;
         if(decodedtoken){
+          console.log('HELLO WORLD')
           setIsLoggedIn(true)
-        }
-        else{
-          console.logo('TEST')
-          navigate('/')
-
         }
         
       } 
       catch (error) {
+        navigate('/')
         console.error(`The error is ${error}`);
       }
     };
@@ -48,9 +45,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Login/>}/>
         <Route path='/register' element={<Registration/>}/>
-        {isLoggedIn && <Route path='/newpage' element={<NewPage/>}/>}
-        {isLoggedIn && <Route path='/secondpage' element={<SecondPage/>}/>}
-        {isLoggedIn && <Route path='/thirdpage' element={<ThirdPage/>}/>}
+        {isLoggedIn && <Route path='/newpage' element={<NewPage setIsLoggedIn={setIsLoggedIn}/>}/>}
+        {isLoggedIn && <Route path='/secondpage' element={<SecondPage setIsLoggedIn={setIsLoggedIn}/>}/>}
+        {isLoggedIn && <Route path='/thirdpage' element={<ThirdPage setIsLoggedIn={setIsLoggedIn}/>}/>}
 
       </Routes>
   );
